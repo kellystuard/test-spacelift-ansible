@@ -5,7 +5,7 @@
     - name: Download the ZIP file
       get_url:
         url: https://getsamplefiles.com/download/zip/sample-1.zip
-        dest: file.zip
+        dest: ./
         mode: '0644'
 
     - name: Ensure the target directory exists
@@ -16,5 +16,5 @@
 
     - name: Unzip the file
       unarchive:
-        src: file.zip
+        src: ./sample-1.zip
         dest: output
