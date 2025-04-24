@@ -1,0 +1,28 @@
+---
+- name: Download and unzip a file
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Ensure the download directory exists
+      file:
+        path: input
+        state: directory
+        mode: '0755'
+
+    - name: Ensure the target directory exists
+      file:
+        path: output
+        state: directory
+        mode: '0755'
+
+    - name: Download the ZIP file
+      get_url:
+        url: https://getsamplefiles.com/download/zip/sample-1.zip
+        dest: input/file.zip
+        mode: '0644'
+
+    - name: Unzip the file
+      unarchive:
+        src: input/file.zip
+        dest: output
+        remote_src: no
