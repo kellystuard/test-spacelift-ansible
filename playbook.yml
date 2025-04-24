@@ -2,12 +2,6 @@
 - name: Download and unzip a file
   hosts: localhost
   tasks:
-    - name: Download the ZIP file
-      get_url:
-        url: https://getsamplefiles.com/download/zip/sample-1.zip
-        dest: ./
-        mode: '0644'
-
     - name: Ensure the target directory exists
       file:
         path: output
@@ -16,5 +10,5 @@
 
     - name: Unzip the file
       unarchive:
-        src: ./sample-1.zip
+        src: sample-1.zip
         dest: output
