@@ -2,13 +2,7 @@
 - name: Download and unzip a file
   hosts: localhost
   tasks:
-    - name: Ensure the target directory exists
-      file:
-        path: output
-        state: directory
-        mode: '0755'
-
     - name: Unzip the file
       unarchive:
         src: sample-1.zip
-        dest: output
+        dest: ./
