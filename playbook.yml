@@ -1,7 +1,6 @@
 ---
 - name: Download and unzip a file
   hosts: localhost
-  become: yes
   tasks:
     - name: Ensure the download directory exists
       file:
