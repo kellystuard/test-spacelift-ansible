@@ -4,5 +4,3 @@
   tasks:
   - name: Unzip the file using shell
     shell: unzip sample-1.zip -d .
-    args:
-      executable: /bin/bash
