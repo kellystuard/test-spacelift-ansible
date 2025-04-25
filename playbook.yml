@@ -4,3 +4,12 @@
   tasks:
   - name: Unzip the file using shell
     shell: unzip sample-1.zip -d .
+
+  - name: List extracted files
+    find:
+      paths: .
+    register: extracted_files
+
+  - name: Output the list of extracted files
+    debug:
+      var: extracted_files.files
