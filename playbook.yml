@@ -10,6 +10,7 @@
       paths: .
     register: extracted_files
 
-  - name: Output the list of extracted files
+  - name: Display file names only
     debug:
-      var: extracted_files.files
+      msg: "{{ item.path | basename }}"
+    loop: "{{ extracted_files.files }}"
