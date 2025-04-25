@@ -1,8 +1,5 @@
 ---
-- name: Download and unzip a file
-  hosts: localhost
-  tasks:
-    - name: Unzip the file
-      unarchive:
-        src: sample-1.zip
-        dest: ./
+- name: Unzip the file using shell
+  shell: unzip sample-1.zip -d .
+  args:
+    executable: /bin/bash
